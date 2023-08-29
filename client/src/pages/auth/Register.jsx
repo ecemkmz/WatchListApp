@@ -5,11 +5,6 @@ const Register = () => {
     <div href="/register" className="flex items-center justify-center h-screen bg-gradient-to-br from-orange-200 to-pink-200 px-6 py-12 lg:px-8">
     <div className="flex-1 flex-col ">
       <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-        <img
-          className="mx-auto h-10 w-auto"
-          src="https://tailwindui.com/img/logos/mark.svg?color=pink&shade=600"
-          alt="Your Company"
-        />
         <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
           Create an account
         </h2>
