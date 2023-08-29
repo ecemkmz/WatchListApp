@@ -1,17 +1,17 @@
-import React from 'react'
-import { Fragment } from 'react'
-import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { BellIcon,MenuIcon,UserCircleIcon, XIcon} from '@heroicons/react/outline'
+import React from 'react';
+import { Fragment } from 'react';
+import { Disclosure, Menu, Transition } from '@headlessui/react';
+import { BellIcon, MenuIcon, UserCircleIcon, XIcon, SearchIcon } from '@heroicons/react/outline';
 
 const navigation = [
   { name: 'Home', href: '#', current: true },
   { name: 'Movies', href: '#', current: false },
   { name: 'Tv-Shows', href: '#', current: false },
   { name: 'About', href: '#', current: false },
-]
+];
 
 function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
+  return classes.filter(Boolean).join(' ');
 }
 
 const Header = () => {
@@ -22,7 +22,6 @@ const Header = () => {
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
             <div className="relative flex h-16 items-center justify-between">
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
-                {/* Mobile menu button*/}
                 <Disclosure.Button className="relative inline-flex items-center justify-center rounded-md p-2 text-pink-600 hover:bg-pink-600 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                   <span className="absolute -inset-0.5" />
                   <span className="sr-only">Open main menu</span>
@@ -56,6 +55,25 @@ const Header = () => {
                         {item.name}
                       </a>
                     ))}
+                  </div>
+                </div>
+              </div>
+              <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start md:flex hidden">
+                <div className="relative flex w-full">
+                  <input
+                    type="text"
+                    className="block w-full pl-6 pr-3 py-1 text-gray-600 bg-white border rounded-full focus:border-pink-600 focus:ring-pink-600 focus:outline-none focus:ring focus:ring-opacity-40"
+                    placeholder="Search..."
+                  />
+                  <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-2 sm:pr-0 ">
+                    <button
+                      type="button"
+                      className="relative rounded-full bg-pink-600 p-1 text-white-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-white-2 focus:ring-offset-white-800"
+                    >
+                      <span className="absolute -inset-1.5" />
+                      <span className="sr-only">Search</span>
+                      <SearchIcon className="h-6 w-6 text-white" aria-hidden="true" />
+                    </button>
                   </div>
                 </div>
               </div>
@@ -126,6 +144,25 @@ const Header = () => {
           </div>
 
           <Disclosure.Panel className="sm:hidden">
+          <div className="space-y-1 px-2 pb-3 pt-2">
+                <div className="relative flex w-full">
+                  <input
+                    type="text"
+                    className="block w-full pl-6 pr-3 py-1 text-gray-600 bg-white border rounded-full focus:border-pink-600 focus:ring-pink-600 focus:outline-none focus:ring focus:ring-opacity-40"
+                    placeholder="Search..."
+                  />
+                  <div className="absolute inset-y-0 right-0 flex items-center sm:static sm:inset-auto sm:ml-2 sm:pr-0 ">
+                    <button
+                      type="button"
+                      className="relative rounded-full bg-pink-600 p-1 text-white-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-white-2 focus:ring-offset-white-800"
+                    >
+                      <span className="absolute -inset-1.5" />
+                      <span className="sr-only">Search</span>
+                      <SearchIcon className="h-6 w-6 text-white" aria-hidden="true" />
+                    </button>
+                  </div>
+                </div>
+                </div>
             <div className="space-y-1 px-2 pb-3 pt-2">
               {navigation.map((item) => (
                 <Disclosure.Button
@@ -146,7 +183,7 @@ const Header = () => {
         </>
       )}
     </Disclosure>
-  )
+  );
 }
 
-export default Header
+export default Header;
