@@ -5,7 +5,7 @@ import { faFacebook, faGithub, faInstagram, faTwitter } from '@fortawesome/free-
 const Footer = () => {
   return (
     <footer className="bg-white-800">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8  border-t border-white-600 py-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 py-12">
           <div className="col-span-1">
             <h2 className="text-2xl font-semibold text-pink-600 mb-4">About Us</h2>

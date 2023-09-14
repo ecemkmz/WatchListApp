@@ -1,23 +1,17 @@
-import React from "react";
-import { Fragment } from "react";
-import { Disclosure, Menu, Transition } from "@headlessui/react";
-import {
-  BellIcon,
-  MenuIcon,
-  UserCircleIcon,
-  XIcon,
-  SearchIcon,
-} from "@heroicons/react/outline";
+import React from 'react';
+import { Fragment } from 'react';
+import { Disclosure, Menu, Transition } from '@headlessui/react';
+import { BellIcon, MenuIcon, UserCircleIcon, XIcon, SearchIcon } from '@heroicons/react/outline';
 
 const navigation = [
-  { name: "Home", href: "/", current: true },
-  { name: "Movies", href: "/movies", current: true },
-  { name: "Tv-Shows", href: "/tvshows", current: false },
-  { name: "About", href: "/about", current: false },
+  { name: 'Home', href: '#', current: true },
+  { name: 'Movies', href: '#', current: false },
+  { name: 'Tv-Shows', href: '#', current: false },
+  { name: 'About', href: '#', current: false },
 ];
 
 function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
+  return classes.filter(Boolean).join(' ');
 }
 
 const Header = () => {
@@ -26,7 +20,7 @@ const Header = () => {
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-            <div className="relative flex h-16 items-center justify-between">
+            <div className="relative flex h-20 items-center justify-between">
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 <Disclosure.Button className="relative inline-flex items-center justify-center rounded-md p-2 text-pink-600 hover:bg-pink-600 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                   <span className="absolute -inset-0.5" />
@@ -42,8 +36,8 @@ const Header = () => {
                 <div className="flex flex-shrink-0 items-center">
                   <img
                     className="h-8 w-auto"
-                    src="https://lh3.googleusercontent.com/_0xRHKWm-WXQdzOLltf-26YH2GcZnDR-p2Svk6MMCNG3CmknZlk34tZdBJOft84wtcWJxfVB_7eUQzXZhCeNJ_2Adh4tBXUA7P3-LZsq"
-                    alt="Your Company"
+                    src="https://i.hizliresim.com/3d2jchy.png"
+                    alt="WatchList"
                   />
                 </div>
                 <div className="hidden sm:ml-6 sm:block">
@@ -53,12 +47,10 @@ const Header = () => {
                         key={item.name}
                         href={item.href}
                         className={classNames(
-                          item.current
-                            ? "bg-pink-600 text-white"
-                            : "text-black-300 hover:bg-pink-600 hover:text-white",
-                          "rounded-md px-3 py-2 text-sm font-medium"
+                          item.current ? 'bg-pink-600 text-white' : 'text-black-300 hover:bg-pink-600 hover:text-white',
+                          'rounded-md px-3 py-2 text-sm font-medium'
                         )}
-                        aria-current={item.current ? "page" : undefined}
+                        aria-current={item.current ? 'page' : undefined}
                       >
                         {item.name}
                       </a>
@@ -66,7 +58,7 @@ const Header = () => {
                   </div>
                 </div>
               </div>
-              <div className="flex-1 items-center justify-center sm:items-stretch sm:justify-start md:flex hidden">
+              <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start md:flex hidden ">
                 <div className="relative flex w-full">
                   <input
                     type="text"
@@ -80,10 +72,7 @@ const Header = () => {
                     >
                       <span className="absolute -inset-1.5" />
                       <span className="sr-only">Search</span>
-                      <SearchIcon
-                        className="h-6 w-6 text-white"
-                        aria-hidden="true"
-                      />
+                      <SearchIcon className="h-6 w-6 text-white" aria-hidden="true" />
                     </button>
                   </div>
                 </div>
@@ -120,11 +109,8 @@ const Header = () => {
                       <Menu.Item>
                         {({ active }) => (
                           <a
-                            href="/"
-                            className={classNames(
-                              active ? "bg-gray-100" : "",
-                              "block px-4 py-2 text-sm text-gray-700"
-                            )}
+                            href="#"
+                            className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
                           >
                             Your Profile
                           </a>
@@ -133,11 +119,8 @@ const Header = () => {
                       <Menu.Item>
                         {({ active }) => (
                           <a
-                            href="/"
-                            className={classNames(
-                              active ? "bg-gray-100" : "",
-                              "block px-4 py-2 text-sm text-gray-700"
-                            )}
+                            href="#"
+                            className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
                           >
                             Settings
                           </a>
@@ -146,11 +129,8 @@ const Header = () => {
                       <Menu.Item>
                         {({ active }) => (
                           <a
-                            href="/"
-                            className={classNames(
-                              active ? "bg-gray-100" : "",
-                              "block px-4 py-2 text-sm text-gray-700"
-                            )}
+                            href="#"
+                            className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
                           >
                             Sign out
                           </a>
@@ -164,28 +144,25 @@ const Header = () => {
           </div>
 
           <Disclosure.Panel className="sm:hidden">
-            <div className="space-y-1 px-2 pb-3 pt-2">
-              <div className="relative flex w-full">
-                <input
-                  type="text"
-                  className="block w-full pl-6 pr-3 py-1 text-gray-600 bg-white border rounded-full focus:border-pink-600 focus:ring-pink-600 focus:outline-none focus:ring focus:ring-opacity-40"
-                  placeholder="Search..."
-                />
-                <div className="absolute inset-y-0 right-0 flex items-center sm:static sm:inset-auto sm:ml-2 sm:pr-0 ">
-                  <button
-                    type="button"
-                    className="relative rounded-full bg-pink-600 p-1 text-white-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-white-2 focus:ring-offset-white-800"
-                  >
-                    <span className="absolute -inset-1.5" />
-                    <span className="sr-only">Search</span>
-                    <SearchIcon
-                      className="h-6 w-6 text-white"
-                      aria-hidden="true"
-                    />
-                  </button>
+          <div className="space-y-1 px-2 pb-3 pt-2">
+                <div className="relative flex w-full">
+                  <input
+                    type="text"
+                    className="block w-full pl-6 pr-3 py-1 text-gray-600 bg-white border rounded-full focus:border-pink-600 focus:ring-pink-600 focus:outline-none focus:ring focus:ring-opacity-40"
+                    placeholder="Search..."
+                  />
+                  <div className="absolute inset-y-0 right-0 flex items-center sm:static sm:inset-auto sm:ml-2 sm:pr-0 ">
+                    <button
+                      type="button"
+                      className="relative rounded-full bg-pink-600 p-1 text-white-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-white-2 focus:ring-offset-white-800"
+                    >
+                      <span className="absolute -inset-1.5" />
+                      <span className="sr-only">Search</span>
+                      <SearchIcon className="h-6 w-6 text-white" aria-hidden="true" />
+                    </button>
+                  </div>
                 </div>
-              </div>
-            </div>
+                </div>
             <div className="space-y-1 px-2 pb-3 pt-2">
               {navigation.map((item) => (
                 <Disclosure.Button
@@ -193,12 +170,10 @@ const Header = () => {
                   as="a"
                   href={item.href}
                   className={classNames(
-                    item.current
-                      ? "bg-pink-600 text-white"
-                      : "text-black-300 hover:bg-pink-600 hover:text-white",
-                    "block rounded-md px-3 py-2 text-base font-medium"
+                    item.current ? 'bg-pink-600 text-white' : 'text-black-300 hover:bg-pink-600 hover:text-white',
+                    'block rounded-md px-3 py-2 text-base font-medium'
                   )}
-                  aria-current={item.current ? "page" : undefined}
+                  aria-current={item.current ? 'page' : undefined}
                 >
                   {item.name}
                 </Disclosure.Button>
@@ -209,6 +184,6 @@ const Header = () => {
       )}
     </Disclosure>
   );
-};
+}
 
 export default Header;
