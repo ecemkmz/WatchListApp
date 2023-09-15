@@ -17,7 +17,7 @@ const connect = async () => {
 const ActorSchema = new mongoose.Schema({
   nconst: String,
   primaryName: String,
-  birthYear: String,
+  birthYear: String, 
   deathYear: String,
   primaryProfession: String,
   knownForTitles: String,
