@@ -1,40 +1,41 @@
-const Actor = require("../../models/Actor.js");
+const Movie = require("../../models/Movie.js");
 const express = require("express");
 const router = express.Router();
 const axios = require("axios");
 
-const apiKey = "e7c680bb91msh7cefc06feb84bf0p16346fjsn68ee6f3b768b";
-const host = "moviesdatabase.p.rapidapi.com";
 const limitPerPage = 50;
 const totalPages = 50;
 
-  router.get("/actors", async (req, res) => {
-    let allActors =[];
+
+  router.get("/movies", async (req, res) => {
+    let allMovies =[];
     for (let page = 1; page <= totalPages; page++) {
     const options = {
       method: "GET",
-      url: "https://moviesdatabase.p.rapidapi.com/actors",
+      url: "https://moviesdatabase.p.rapidapi.com/titles",
       params: {
         page: page,
         limit: limitPerPage,
+        titleType: 'movie',
       },
       headers: {
-        "X-RapidAPI-Key": apiKey,
-        "X-RapidAPI-Host": host,
+        'X-RapidAPI-Key': 'e7c680bb91msh7cefc06feb84bf0p16346fjsn68ee6f3b768b',
+        'X-RapidAPI-Host': 'moviesdatabase.p.rapidapi.com'
       },
     };
 
     try {
       const response = await axios.request(options);
-      const actors = response.data.results;
-      allActors = allActors.concat(actors);
-      await Actor.insertMany(actors);
+      const movies = response.data.results;
+      allMovies = allMovies.concat(movies);
+
     } catch (error) {
       console.error("Hata:", error);
       return res.status(500).json({ error: "Veri çekme hatası" });
     }
   }
-  res.json(allActors);
+  res.json(allMovies);
+  await Movie.insertMany(allMovies);
   });
 
 
