@@ -1,7 +1,7 @@
 import React from "react";
+import Footer from "../components/Footer/Footer";
 import MoviesCard from "../components/movies/MoviesCard";
 import Header from "../components/Header/Header";
-import Footer from "../components/Footer/Footer";
 
 const moviesPage = () => {
   return (

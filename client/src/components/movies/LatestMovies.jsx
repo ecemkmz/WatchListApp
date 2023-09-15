@@ -1,6 +1,6 @@
 import React from "react";
-import { Card, Carousel } from "antd";
 const { Meta } = Card;
+import { Card, Carousel } from "antd";
 
 const LatestMovies = () => {
   // Örnek film verileri
