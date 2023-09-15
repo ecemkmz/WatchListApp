@@ -4,7 +4,17 @@ const dotenv = require("dotenv");
 const axios = require('axios');
 
 const app = express();
+<<<<<<< Updated upstream
 const port = process.env.PORT || 5000; 
+=======
+const cors = require("cors");
+const port = process.env.PORT || 5500;
+
+//routes
+const actorRoute = require("./src/api/routes/actors.js");
+const movieRoute = require("./src/api/routes/movies.js");
+
+>>>>>>> Stashed changes
 dotenv.config();
 const connect = async () => {
   try {
@@ -31,6 +41,7 @@ const limitPerPage = 50;
 const totalPages = 50;
 for (let page = 1; page <= totalPages; page++) {
 
+<<<<<<< Updated upstream
 app.get(`/actors/${page}`, async (req, res) => {
 
     const options = {
@@ -59,6 +70,11 @@ app.get(`/actors/${page}`, async (req, res) => {
 
 
 }); };
+=======
+app.use("/api", actorRoute);
+app.use("/api", movieRoute);
+
+>>>>>>> Stashed changes
 
 app.listen(port, () => {
   connect();
