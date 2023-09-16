@@ -1,5 +1,5 @@
-const express = require("express");
 const mongoose = require("mongoose");
+const express = require("express");
 const dotenv = require("dotenv");
 
 const app = express();
@@ -9,6 +9,7 @@ const port = process.env.PORT || 5500;
 //routes
 const actorRoute = require("./src/api/routes/actors.js");
 const movieRoute = require("./src/api/routes/movies.js");
+const categoryRoute = require("./src/api/routes/categories.js");
 
 dotenv.config();
 const connect = async () => {
@@ -26,6 +27,7 @@ app.use(cors());
 
 app.use("/api", actorRoute);
 app.use("/api", movieRoute);
+app.use("/api", categoryRoute);
 
 app.listen(port, () => {
   connect();

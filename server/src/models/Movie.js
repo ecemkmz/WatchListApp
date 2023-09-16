@@ -9,30 +9,30 @@ const MovieSchema = new mongoose.Schema({
     height: Number,
     url: String,
     caption: {
-      plainText: String
-    }
+      plainText: String,
+    },
   },
   titleType: {
     text: String,
     id: String,
     isSeries: Boolean,
-    isEpisode: Boolean
+    isEpisode: Boolean,
   },
   titleText: {
-    text: String
+    text: String,
   },
   originalTitleText: {
-    text: String
+    text: String,
   },
   releaseYear: {
     year: Number,
-    endYear: Number
+    endYear: Number,
   },
   releaseDate: {
     day: Number,
     month: Number,
-    year: Number
-  }
+    year: Number,
+  },
 });
 
 const Movie = mongoose.model("movies", MovieSchema);
