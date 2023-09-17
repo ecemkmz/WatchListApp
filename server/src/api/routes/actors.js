@@ -1,7 +1,7 @@
-const Actor = require("../../models/Actor.js");
 const express = require("express");
 const router = express.Router();
 const axios = require("axios");
+const Actor = require("../../models/Actor.js");
 
 const apiKey = "e7c680bb91msh7cefc06feb84bf0p16346fjsn68ee6f3b768b";
 const host = "moviesdatabase.p.rapidapi.com";

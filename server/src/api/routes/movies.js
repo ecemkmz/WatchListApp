@@ -1,7 +1,7 @@
-const Movie = require("../../models/Movie.js");
 const express = require("express");
 const router = express.Router();
 const axios = require("axios");
+const Movie = require("../../models/Movie.js");
 
 const limitPerPage = 50;
 const totalPages = 50;
