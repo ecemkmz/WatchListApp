@@ -12,12 +12,11 @@ const movieRoute = require("./src/api/routes/movies.js");
 const categoryRoute = require("./src/api/routes/categories.js");
 
 dotenv.config();
+
 const connect = async () => {
   try {
-    await mongoose.connect(
-      "mongodb+srv://azra:v2oYtxHemMQ4MHTM@cluster0.r8ydkmh.mongodb.net/?retryWrites=true&w=majority"
-    );
-    console.log("Connected to mongoDB");
+    await mongoose.connect(process.env.MONGODB_URI);
+    console.log("Connected to MongoDB");
   } catch (error) {
     throw error;
   }
